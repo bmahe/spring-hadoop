@@ -71,11 +71,11 @@ public class HbaseTemplate extends HbaseAccessor implements HbaseOperations {
 		}
 	}
 
-	private HTableInterface getTable(String tableName) {
+	protected HTableInterface getTable(String tableName) {
 		return HbaseUtils.getHTable(tableName, getConfiguration(), getCharset(), getTableFactory());
 	}
 
-	private void releaseTable(String tableName, HTableInterface table) {
+	protected void releaseTable(String tableName, HTableInterface table) {
 		HbaseUtils.releaseTable(tableName, table, getTableFactory());
 	}
 
